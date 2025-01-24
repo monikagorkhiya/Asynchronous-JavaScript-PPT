@@ -23,16 +23,16 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22.13.1
+          node-version: 'lts/*'
 
       - name: Setup @antfu/ni
         run: npm i -g @antfu/ni
 
       - name: Install dependencies
-        run: npm i
+        run: nci
 
       - name: Build
-        run: npm run build
+        run: nr build --base /${{github.event.repository.name}}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
