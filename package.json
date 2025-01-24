@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Asynchronous JavaScript PPT (Async/Await, Promises, Callbacks)",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "latest",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monikagorkhiya/Asynchronous-JavaScript-PPT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monikagorkhiya/Asynchronous-JavaScript-PPT/issues"
+  },
+  "homepage": "https://github.com/monikagorkhiya/Asynchronous-JavaScript-PPT#readme"
+}
