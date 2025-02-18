@@ -330,40 +330,39 @@ async function getUserData() {
 
 ---
 
-# Real-World Example
-
-Building a simple image loader with all three approaches
+# Comparision Between Async and Promise Example
 
 ```javascript
-// 1. Callback Approach
-function loadImageCallback(url, callback) {
-  const img = new Image();
-  img.onload = () => callback(null, img);
-  img.onerror = () => callback(new Error('Failed to load image'));
-  img.src = url;
+
+const promisefunc = new Promise((resolve, reject) = {
+  setTimeOut( ()=>{ resolve("Promise Resolved Successfully!!") } ,1000)
+};
+
+function getData() {
+    promisefunc.then((res) console.log(res));
+    console.log("Hello World")
 }
 
-// 2. Promise Approach
-function loadImagePromise(url) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = () => reject(new Error('Failed to load image'));
-    img.src = url;
-  });
+getData();
+
+```
+
+```javascript
+
+const promisefunc = new Promise((resolve, reject) = {
+      setTimeOut( ()=>{ resolve("Promise Resolved Successfully!!") } ,1000)
+};
+
+async function getData() {
+      // try... catch
+       console.log("Hello World1")
+       const data = await promisefunc();
+       console.log("Hello World2")
+       console.log(data);
 }
 
-// 3. Async/Await Approach
-async function loadImages(urls) {
-  try {
-    const images = await Promise.all(
-      urls.map(url => loadImagePromise(url))
-    );
-    return images;
-  } catch (error) {
-    console.error('Failed to load images:', error);
-  }
-}
+getData();
+
 ```
 
 ---
